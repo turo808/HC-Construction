@@ -1,0 +1,334 @@
+/* Tiny reset thingy */
+body,html{
+  margin:0;
+  padding:0;
+  box-sixing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 12vh;
+  background-color: #f3f7f2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo{
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 18px;
+
+
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width:40%;
+
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links a {
+
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 10px;
+
+}
+.burger{
+  diplay: none;
+  cursor: pointer;
+}
+
+.burger div{
+  width: 24px;
+  height: 3px;
+  background-color:#000000;
+  margin: 3px;
+  transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:100vw){
+  .burger{
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width:1024px){
+  .nav-links{
+    width:50%;
+  }
+  }
+
+@media screen and (max-width:768px){
+  body{
+    overflow-x: hidden;
+  }
+  .nav-links{
+    position: fixed;
+     right: 0px;
+     height: 92vh;
+     top: 8vh;
+     background-color: #f3f7f2;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 50%;
+     transform: translateX(100%);
+     transition: transform 0.5s ease-in;
+  }
+  .nav-links li{
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+    opacity: 1;
+  }
+
+}
+
+.nav-active{
+  transform: translateX(0%);
+    z-index: 9999;
+
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    tranform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,3.5px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg)translate(-5px,-3.5px);
+}
+
+
+
+
+
+
+.myButton {
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #f3f7f2 100%, #505739 5%);
+	background-color:#f3f7f2;
+	border-radius:15px;
+	border:2px solid #333029;
+	display:inline-grid;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton:active {
+	position:inherit;
+	top:1px;
+}
+
+
+
+
+
+.headtag {
+  font-size: 40px;
+  color: white;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+
+  /* For text formatting. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+.textstatic{
+  display: block;
+  text-shadow: none;
+  color: black;
+
+}
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+.static {
+  background: #f3f7f2;
+  text-align: center;
+
+}
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg1::after {
+  background-image: url('images/garage1full.jpeg');
+  background-repeat:no-repeat;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1610px;
+
+
+}
+
+
+
+.bg2::after {
+  background-image: url('images/pergola2.jpg');
+  background-repeat:no-repeat;
+
+}
+
+
+
+
+
+
+
+
+
+
+.wrapper2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > * {
+    margin: 5px;
+  }
+}
+
+.media {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+      max-width: 100%;
+      height: auto;
+    }
+}
+
+.layer {
+  opacity: 0;
+  position: absolute;
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 90%;
+  background: #FFF;
+  color: #151E3F;
+  transition: all 0.9s ease;
+  p {
+    transition: all 0.9s ease;
+    transform: scale(0.1)
+  }
+}
+
+/* p {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing:1px;
+} */
+
+.media:hover .layer {
+  opacity: 0.8;
+  width: 90%;
+  transition: all 0.5s ease;
+  p {
+    transform: scale(1);
+    transition: all 0.9s ease;
+  }
+}
+
+@media (max-width: 800px){
+  body {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+    display: block;
+    > * {
+      margin: 10px;
+    }
+  }
+}

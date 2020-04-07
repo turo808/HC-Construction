@@ -1,0 +1,155 @@
+/* Tiny reset thingy */
+body,html{
+  margin:0;
+  padding:0;
+  box-sixing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+ nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 12vh;
+  background-color: #f3f7f2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.logo{
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 18px;
+
+
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width:40%;
+
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links a {
+
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 10px;
+
+}
+.burger{
+  diplay: none;
+  cursor: pointer;
+}
+
+.burger div{
+  width: 24px;
+  height: 3px;
+  background-color:#000000;
+  margin: 3px;
+  transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:100vw){
+  .burger{
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width:1024px){
+  .nav-links{
+    width:50%;
+  }
+  }
+
+@media screen and (max-width:768px){
+  body{
+    overflow-x: hidden;
+  }
+  .nav-links{
+    position: fixed;
+     right: 0px;
+     height: 92vh;
+     top: 8vh;
+     background-color: #f3f7f2;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 50%;
+     transform: translateX(100%);
+     transition: transform 0.5s ease-in;
+  }
+  .nav-links li{
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+    opacity: 1;
+  }
+
+}
+
+.nav-active{
+  transform: translateX(0%);
+    z-index: 9999;
+
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    tranform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,3.5px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg)translate(-5px,-3.5px);
+}
+
+
+
+
+
+
+.myButton {
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #f3f7f2 100%, #505739 5%);
+	background-color:#f3f7f2;
+	border-radius:15px;
+	border:2px solid #333029;
+	display:inline-grid;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton:active {
+	position:inherit;
+	top:1px;
+}
